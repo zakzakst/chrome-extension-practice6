@@ -6,13 +6,7 @@ export default defineManifest({
   name: "Extension Template",
   version: "1.0.0",
 
-  // permissions: [
-  //   "sidePanel",
-  //   // "bookmarks",
-  //   // "tabs",
-  //   // "tabGroups",
-  //   // "storage",
-  // ],
+  permissions: ["storage"],
 
   icons: {
     "16": "icons/icon-16.png",
