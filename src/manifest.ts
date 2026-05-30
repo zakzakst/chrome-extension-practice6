@@ -3,7 +3,7 @@ import { defineManifest } from "@crxjs/vite-plugin";
 
 export default defineManifest({
   manifest_version: 3,
-  name: "Extension Template",
+  name: "Spreadsheet to Clipboard",
   version: "1.0.0",
 
   permissions: ["storage"],

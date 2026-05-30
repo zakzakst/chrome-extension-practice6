@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import { getSheetDataUrl, setSheetDataUrl } from "@/shared/storage";
+import { toast } from "sonner";
 
 const App = () => {
   const [url, setUrl] = useState("");
@@ -36,14 +36,13 @@ const App = () => {
 
   return (
     <div className="space-y-4 p-4">
-      <h1 className="text-xl font-semibold">オプション</h1>
       <div className="space-y-2">
         <label className="block text-sm font-medium">シートデータ取得URL</label>
         <input
           className="focus:border-primary focus:ring-primary/20 w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:ring-2"
           value={url}
           onChange={(event) => setUrl(event.target.value)}
-          placeholder="https://example.com/sheet-data.json"
+          placeholder="https://example.com/sheet-data-api"
           type="url"
         />
       </div>

@@ -36,12 +36,10 @@ export const setSheetDataUrl = async (url: string): Promise<void> => {
 };
 
 export const getSheetData = async (): Promise<SheetData | undefined> => {
-  // TODO: JSON.parse不要か挙動確認する
   return getStorageValue<SheetData>(SHEET_DATA_KEY);
 };
 
 export const setSheetData = async (value: SheetData): Promise<void> => {
-  // TODO: JSON.stringify不要か挙動確認する
   await setStorageValue(SHEET_DATA_KEY, value);
 };
 

@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import {
+  type SheetData,
+  type SheetDataItem,
   fetchSheetDataFromUrl,
   getSheetData,
   getSheetDataUrl,
   setSheetData,
-  type SheetData,
-  type SheetDataItem,
 } from "@/shared/storage";
+import { toast } from "sonner";
 
 const App = () => {
   const [sheetDataUrl, setSheetDataUrlState] = useState<string>("");
@@ -60,18 +60,17 @@ const App = () => {
   const handleCopyItem = useCallback(async (item: SheetDataItem) => {
     try {
       await navigator.clipboard.writeText(item.content);
-      toast.success("コンテンツをコピーしました。");
+      toast.success("コンテンツをコピーしました。", { duration: 1000 });
     } catch (error) {
       toast.error("クリップボードへのコピーに失敗しました。");
     }
   }, []);
 
   return (
-    <div className="space-y-4 p-4">
-      <div className="flex items-center justify-between gap-2">
-        <h1 className="text-xl font-semibold">シートデータ</h1>
+    <div className="w-md space-y-4 p-4">
+      <div>
         <Button onClick={handleRefresh} disabled={isRefreshLoading}>
-          更新
+          シートデータ更新
         </Button>
       </div>
 
